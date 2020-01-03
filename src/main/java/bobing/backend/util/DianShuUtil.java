@@ -75,6 +75,60 @@ public class DianShuUtil {
 
     }
 
+
+
+    /**
+     * 计算是否是四红
+     * @param numbers
+     * @return
+     */
+    public static boolean isSiHong(int [] numbers) {
+
+        return countNumber4(numbers) == 4;
+    }
+
+    /**
+     * 计算是否是五子
+     * @param numbers
+     * @return
+     */
+    public static boolean isWuZi(int [] numbers) {
+
+        return ifHas5SameNumber(numbers)
+                && countNumber4(numbers) < 5;
+    }
+
+    /**
+     * 计算是否是五红
+     * @param numbers
+     * @return
+     */
+    public static boolean isWuHong(int [] numbers) {
+
+        return countNumber4(numbers) == 5;
+    }
+
+    /**
+     * 计算是否是六子
+     * @param numbers
+     * @return
+     */
+    public static boolean isLiuZi(int [] numbers) {
+
+        return ifHas6SameNumber(numbers)
+                && countNumber4(numbers) < 6;
+    }
+
+    /**
+     * 计算是否是六红
+     * @param numbers
+     * @return
+     */
+    public static boolean isLiuHong(int [] numbers) {
+
+        return countNumber4(numbers) == 6;
+    }
+
     /**
      * 计算有多少个4
      * @param numbers
@@ -144,6 +198,15 @@ public class DianShuUtil {
      */
     private static boolean ifHas5SameNumber(int [] numbers) {
         return ifHasSameNumber(numbers, 5);
+    }
+
+    /**
+     * 计算是否有6个数字相同的骰子
+     * @param numbers
+     * @return
+     */
+    private static boolean ifHas6SameNumber(int [] numbers) {
+        return ifHasSameNumber(numbers, 6);
     }
 
     /**
